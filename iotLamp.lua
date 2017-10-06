@@ -27,7 +27,7 @@ function connectToBroker()
   if(connnAttempts ~= 0) then
     mqtt:connect(conf.host, conf.port, 1, 0, function(con) print(con) end, handleMqttError);
   else
-    node.dsleep(sleepTime*1000000, 1);   
+    node.dsleep(conf.sleepTime*1000000, 1);   
   end
 end
 
