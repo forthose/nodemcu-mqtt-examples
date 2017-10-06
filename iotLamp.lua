@@ -32,7 +32,7 @@ function connectToBroker()
 end
 
 function handleMqttError(client, reason)
-   connAttempts = conncectionAttempts - 1;
+   connAttempts = connAttempts - 1;
   tmr.create():alarm(2*1000, tmr.ALARM_SINGLE, connectToBroker);
 end
 
