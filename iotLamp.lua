@@ -15,7 +15,6 @@ function start()
   mqtt:on("connect", function(client) 
     mqtt:subscribe(conf.lampTopic, 0, function(conn) print("subscribe success") end)
   end);
-  mqtt:on("connected", function(client) print("connected") end);
   mqtt:on("message",function(client, topic, message)
     if (topic == conf.lampTopic) then
       toggleLamp(message); 
